@@ -8,7 +8,8 @@
       "seatHeight": "805 mm (31.69 in)",
       "safety": "ABS",
       "number": "797",
-      "img": "moto_red.png"
+      "img": "moto_red.png",
+      "id": 1
     },
     {
       "displacement": "803 cc",
@@ -18,7 +19,8 @@
       "seatHeight": "805 mm (31.69 in)",
       "safety": "ABS",
       "number": "897",
-      "img": "moto_black.png"
+      "img": "moto_black.png",
+      "id": 2
     },
     {
       "displacement": "803 cc",
@@ -28,7 +30,8 @@
       "seatHeight": "805 mm (31.69 in)",
       "safety": "ABS",
       "number": "797",
-      "img": "moto_white.png"
+      "img": "moto_white.png",
+      "id": 3
     }
   ]
 }

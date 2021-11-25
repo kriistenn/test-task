@@ -1,64 +1,43 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import style from './card.module.css'
-import axios from "axios";
-
-const mock = [
-    {
-        id: 1,
-        title: 'Displacement',
-        content: '803 cc'
-    },
-    {
-        id: 2,
-        title: 'Horse Power',
-        content: '803 cc'
-    },
-    {
-        id: 3,
-        title: 'Horse Power',
-        content: '803 cc'
-    },
-    {
-        id: 4,
-        title: 'Horse Power',
-        content: '803 cc'
-    },
-    {
-        id: 5,
-        title: 'Horse Power',
-        content: '803 cc'
-    },
-    {
-        id: 6,
-        title: 'Horse Power',
-        content: '803 cc'
-    }
-]
 
 
-const Card = () => {
-    useEffect(() => {
-        axios.get(' http://localhost:8000/products')
-            .then(res => {
-                console.log(res)
-            })
-    })
-
+const Card = ({data}) => {
     return (
         <div className={style['container-card']}>
             <div className={style['wrapper-card']}>
-                <ul>
                     {
-                        mock.map((item) => {
+                        data.map((item) => {
                             return (
-                                <li key={item.id} className={style['item']}>
-                                    <span className={style['title']}>{item.title}</span>
-                                    <span className={style['content']}>{item.content}</span>
-                                </li>
+                                <ul key={item.id}>
+                                    <li className={style['item']}>
+                                        <span className={style['title']}>Displacement</span>
+                                        <span className={style['content']}>{item.displacement}</span>
+                                    </li>
+                                    <li  className={style['item']}>
+                                        <span className={style['title']}>Horse Power</span>
+                                        <span className={style['content']}>{item.horsePower}</span>
+                                    </li>
+                                    <li  className={style['item']}>
+                                        <span className={style['title']}>Torque</span>
+                                        <span className={style['content']}>{item.torque}</span>
+                                    </li>
+                                    <li className={style['item']}>
+                                        <span className={style['title']}>Dry Weight</span>
+                                        <span className={style['content']}>{item.dryWeight}</span>
+                                    </li>
+                                    <li className={style['item']}>
+                                        <span className={style['title']}>Seat Height</span>
+                                        <span className={style['content']}>{item.seatHeight}</span>
+                                    </li>
+                                    <li className={style['item']}>
+                                        <span className={style['title']}>Safety</span>
+                                        <span className={style['content']}>{item.safety}</span>
+                                    </li>
+                                </ul>
                             )
                         })
                     }
-                </ul>
                 <div className={style['container-choice']}>
                     <div className={style['red']}></div>
                     <div className={style['white']}></div>
