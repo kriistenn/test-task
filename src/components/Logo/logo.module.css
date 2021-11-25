@@ -1,0 +1,19 @@
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    align-self: center;
+    padding-bottom: 46px;
+    animation: logoAnimation .9s ease infinite alternate;
+}
+
+@keyframes logoAnimation {
+    from { transform: translatey(30px) rotate(-45deg); }
+    to { transform: translatey(30px) rotate(10deg); }
+}
+
+.logo-title {
+    align-self: center;
+}

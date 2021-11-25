@@ -1,0 +1,25 @@
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.header-title {
+    display: inline-block;
+    padding: 5px 10px;
+    border-right: 1px solid #d0d0d0;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.header-title:first-child:before {
+    content: url("../../assets/icon_word.png");
+    padding-right: 4px;
+}
+
+.header-title:last-child {
+    border-right: none;
+}
