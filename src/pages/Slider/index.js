@@ -1,49 +1,31 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import style from './slider.module.css'
 import Header from "../../components/Header";
 import Logo from "../../components/Logo";
-import Slides from "../../Container/Slides";
-import Card from "../../components/CardSLider";
 import axios from "axios";
-import {Router, Switch} from "react-router-dom";
-import { Route } from 'react-router-dom';
+// import Slides from "../../Container/Slides";
+import {useDispatch, useSelector} from "react-redux";
+import {getProducts} from "../../store/action/products";
 
 const Slider = () => {
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
+    const products = useSelector(state => state)
+    console.log(products)
+    const dispatch = useDispatch()
     useEffect(() => {
-        axios.get('  http://localhost:8000/products')
-            .then((res) => {
-                setData(res.data)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-        console.log('data',data)
+        dispatch(getProducts())
     }, [])
 
-
+    
     return (
         <div className={style['bg-container']}>
             <div className={style['wrapper']}>
              <Header/>
              <Logo/>
-             <Slides data={data} />
-             <Card data={data}/>
+            {/*<Slides />red*/}
             </div>
-            <Router>
-                {/* eslint-disable-next-line no-restricted-globals */}
-                <Switch location={location}>
-                    {
-                        data.map(item => {
-                            return (
-                                <Route path='/' exact  />
-                            )
-                        })
-                    }
-                </Switch>
-            </Router>
         </div>
     )
 }
 
-export default Slider
+export default React.memo(Slider);
