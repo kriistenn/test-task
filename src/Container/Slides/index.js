@@ -8,7 +8,7 @@ import style from './slides.module.css'
 import  {
     Pagination,Navigation
 } from 'swiper';
-import Card from "../../components/CardSLider";
+import Card from "../../components/Card";
 
 // install Swiper modules
 SwiperCore.use([Pagination,Navigation]);
@@ -16,6 +16,7 @@ SwiperCore.use([History])
 SwiperCore.use([HashNavigation])
 
 const Slides = ({data}) => {
+    console.log(`../../assets/${data.img}`)
     return (
         <div>
             <Swiper
@@ -37,14 +38,12 @@ const Slides = ({data}) => {
                                 return (
                                     <SwiperSlide
                                         key={item.id}
-                                        data-hash={`monster?${item.id}`}
-
+                                        data-hash={`monster/${item.id}`}
                                     >
                                         <div>
                                             <h2 className={style['number']}>{item.number}</h2>
                                             <img alt={'img'} src={require(`../../../public/${item.img}`).default}/>
                                         </div>
-
                                     </SwiperSlide>
                                 )
                     })

@@ -9,7 +9,7 @@
       "safety": "ABS",
       "number": "797",
       "img": "moto_red.png",
-      "id": 1
+      "id": 0
     },
     {
       "displacement": "801 cc",
@@ -20,7 +20,7 @@
       "safety": "ABS",
       "number": "897",
       "img": "moto_black.png",
-      "id": 2
+      "id": 1
     },
     {
       "displacement": "802 cc",
@@ -31,7 +31,7 @@
       "safety": "ABS",
       "number": "797",
       "img": "moto_white.png",
-      "id": 3
+      "id": 2
     }
   ]
 }
