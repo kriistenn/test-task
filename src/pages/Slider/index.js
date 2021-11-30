@@ -26,10 +26,10 @@ const Slider = () => {
              <Header/>
              <Logo/>
             <Slides data={data} />
-            <Card data={data}/>
+            {/*<Card data={data}/>*/}
             </div>
                 <Switch>
-                    <Route path='#monster/:id' exact component={Card}/>
+                    <Route path='monster:id' exact component={Card}/>
                 </Switch>
 
         </div>

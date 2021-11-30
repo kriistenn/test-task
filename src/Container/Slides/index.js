@@ -16,11 +16,11 @@ SwiperCore.use([History])
 SwiperCore.use([HashNavigation])
 
 const Slides = ({data}) => {
-    console.log(`../../assets/${data.img}`)
+
     return (
         <div>
             <Swiper
-                modules={[HashNavigation]}
+                modules={[History]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation={true}
@@ -28,27 +28,27 @@ const Slides = ({data}) => {
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
                 loop={true}
-                hashNavigation={{
-                    "watchState": true
+                // hashNavigation={{
+                //     "watchState": true
+                // }}
+                history={{
+                    replaceState: true,
                 }}
             >
                 {
-                    // eslint-disable-next-line array-callback-return
-                    data.map(item => {
-                                return (
-                                    <SwiperSlide
-                                        key={item.id}
-                                        data-hash={`monster/${item.id}`}
-                                    >
-                                        <div>
-                                            <h2 className={style['number']}>{item.number}</h2>
-                                            <img alt={'img'} src={require(`../../../public/${item.img}`).default}/>
-                                        </div>
-                                    </SwiperSlide>
-                                )
-                    })
+                data.map((item) => (
+                <SwiperSlide
+                    key={item.id}
+                    data-history={`monster/${item.id}`}
+                >
+                    <div>
+                        <h2 className={style['number']}>{item.number}</h2>
+                        <img alt={'img'} src={require(`../../../public/${item.img}`).default}/>
+                    </div>
+                    <Card item={item}/>
+                </SwiperSlide>
+                ))
                 }
-
             </Swiper>
         </div>
     )
